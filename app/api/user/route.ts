@@ -31,5 +31,6 @@ const dummy_user = {
 
 export async function GET() {
     // TODO: this needs to be fetched using auth token
+    // is this even necessary...?
     return NextResponse.json(dummy_user);
 }

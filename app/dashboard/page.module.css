@@ -1,0 +1,11 @@
+.container {
+	margin: 4em;
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	border-color:azure;
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 1em 5em;
+	height: 70vh;
+}

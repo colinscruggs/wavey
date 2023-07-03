@@ -4,7 +4,6 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import styles from "./Buttons.module.css";
 
-
 export function SignInButton() {
     const { data: session, status } = useSession();
     console.log(session, status);
@@ -26,12 +25,30 @@ export function SignInButton() {
         )
     }
     return (
-        <button onClick={() => signIn()}>Sign In</button>
+        <button onClick={() => signIn('spotify', {
+            callbackUrl: '/dashboard',
+        })}>Sign In</button>
     )
 }
 
 export function SignOutButton() {
     return (
-        <button onClick={() => signOut()}>Sign Out</button>
+        <button onClick={() => signOut({
+            callbackUrl: '/',
+        })}>Sign Out</button>
+    )
+}
+
+export function LandingPageButton() {
+    const handleLandingPageButton = () => {
+        // this is scuffed; handles the both authenticated and unauthenticated cases, resulting in signing in either way
+        // TODO: figure out how to redirect to dashboard if authenticated to avoid duplicate sign in
+        return signIn('spotify', {
+            callbackUrl: '/dashboard',
+        });
+    };
+
+    return (
+        <button onClick={() => handleLandingPageButton()}>Get Started</button>
     )
 }

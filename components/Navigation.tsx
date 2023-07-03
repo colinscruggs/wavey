@@ -12,11 +12,13 @@ export default function Navigation() {
                 <Image src="/next.svg" alt="logo" width={216} height={30} />
             </Link>
             <ul className={styles.links}>
-                {/* TODO: add about to footer in root layout
-                <li>
-                    <Link href={'/about'}>About</Link>
-                </li>
-                */}
+                {
+                    /* TODO: add about to footer in root layout
+                    <li>
+                        <Link href={'/about'}>About</Link>
+                    </li>
+                    */
+                }
                 <li>
                     <SignInButton />
                 </li>
