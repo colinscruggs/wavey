@@ -1,0 +1,9 @@
+.signIn {
+	display: flex;
+	align-items: center;
+	margin: 0.5em;
+}
+
+.signIn > img {
+	margin-right: 0.5em;
+}
