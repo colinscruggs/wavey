@@ -22,6 +22,7 @@ export default function RootLayout({
 				<body className={inter.className}>
 					<Navigation />
 					{children}
+					{ /* TODO: add footer with about page and related info */ }
 				</body>
 			</html>
 		</AuthProvider>
