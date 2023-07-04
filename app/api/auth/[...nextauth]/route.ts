@@ -68,13 +68,14 @@ export const authOptions: NextAuthOptions = {
 			if (token.accessTokenExpires && Date.now() < token.accessTokenExpires) {
 				return token;
 			}
-			
+
 			const newToken = await refreshAccessToken(token);
 			return newToken;
         },
         async session({ session, token }: any) {
             // Send properties to the client, like an access_token from a provider.
             session.accessToken = token.accessToken;
+			console.log(session, 'session callback')
             return session;
         }
     }

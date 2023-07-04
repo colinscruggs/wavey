@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<AuthProvider>
 			<html lang="en">
-				<body className={inter.className}>
+				<body className={inter.className} suppressHydrationWarning={true}>
 					<Navigation />
 					{children}
 					{ /* TODO: add footer with about page and related info */ }
